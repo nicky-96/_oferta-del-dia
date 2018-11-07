@@ -1,14 +1,6 @@
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom";
 
+import App from "./components/App";
 
-class App extends React.Component {
-  render(){
-    return (
-      <div>
-      <Dave />
-      <Yo />
-      </div>
-    );
-  }
-}
+ReactDOM.render(<App />, document.querySelector("#app-container"));
