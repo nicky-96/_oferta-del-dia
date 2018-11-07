@@ -1,51 +1,144 @@
 # Oferta del dia
 
-Playing with React, Firebase and friends.
+Jugando con React, Firebase y amigos.
 
-## 👾🤖🚀 Clone, install... GO 🚀🤖👾
+## 👾🤖🚀 Clonar, instalar ... IR 🚀🤖👾
 
-```
-❯ git clone git@github.com:nicky-96/oferta-del-dia.git
+`` `
+❯ git clone git@github.com: davidgchaves / oferta-del-dia.git
 ❯ cd oferta-del-dia
-❯ npm install
-```
+❯ npm instalar
+`` `
 
-## 0. Installation and First Steps
+## 0. Instalación y Primeros Pasos
 
-### How to install Node
+### Cómo instalar Nodo
 
-Since we are using [fish shell](https://fishshell.com/), we need to:
+Ya que estamos usando [cáscara de pescado] (https://fishshell.com/), necesitamos:
 
-1. Install [NVM](https://github.com/creationix/nvm)
+1. Instale [NVM] (https://github.com/creationix/nvm)
 
-```
-❯ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-```
+`` `
+❯ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | golpetazo
+`` `
 
-2. Install [fish-nvm](https://github.com/FabioAntunes/fish-nvm)
+2. Instale [fish-nvm] (https://github.com/FabioAntunes/fish-nvm)
 
-```
-❯ fisher add FabioAntunes/fish-nvm
-```
+`` `
+❯ fisher add FabioAntunes / fish-nvm
+`` `
 
-3. Install [Node 8](https://nodejs.org/en/) with NVM
+3. Instale [Nodo 8] (https://nodejs.org/en/) con NVM
 
-```
+`` `
 ❯ nvm install 8
-❯ node --version
+❯ nodo --versión
 v8.12.0
-❯ nvm alias default 8.12.0
-```
+❯ nvm alias por defecto 8.12.0
+`` `
 
-### How can I sync the project with a remote GitHub repository
+### ¿Cómo puedo sincronizar el proyecto con un repositorio remoto de GitHub?
 
-```
-❯ git remote add origin git@github.com:nicky-96/oferta-del-dia.git
-❯ git push -u origin master
-```
+`` `
+❯ control remoto de git agregar origen git@github.com: davidgchaves / oferta-del-dia.git
+❯ git push -u origen maestro
+`` `
 
-### More tools
+### Más herramientas
 
-- [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) extension for Firefox.
-- [CMDer](http://cmder.net/): Command Line Emulator for Windows.
-- [Create React App 2](https://github.com/facebook/create-react-app)
+- Extensión [React Developer Tools] (https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) para Firefox.
+- [CMDer] (http://cmder.net/): Emulador de línea de comandos para Windows.
+- [Crear la aplicación React 2] (https://github.com/facebook/create-react-app)
+
+## 1. Introducción a Reaccionar
+
+- ¡Todo reacciona es un componente!
+- Un componente es una pieza de código reutilizable.
+- Webpack es un bundler.
+
+### Cómo declarar un componente
+
+Ambos son equivalentes
+
+`` `jsx
+clase Dave extiende React.Component {
+  render () {
+    return <p> ¿Qué crees que estás haciendo, Dave? </p>;
+  }
+}
+`` `
+
+`` `jsx
+const Dave = () => {
+  return <p> ¿Qué crees que estás haciendo, Dave? </p>;
+};
+`` `
+
+### Estructura de componentes
+
+`` `jsx
+// IMPORTACIONES
+importar reaccionar desde "reaccionar";
+
+// COMPONENTE
+clase Dave extiende React.Component {
+  render () {
+    return <p> ¿Qué crees que estás haciendo, Dave? </p>;
+  }
+}
+
+// EXPORTAR
+Dave predeterminado de exportación;
+`` `
+
+### A JSX o no a JSX ...
+
+#### Con una sola etiqueta
+
+Ambos son equivalentes
+
+`` `jsx
+<p> ¿Qué crees que estás haciendo, Dave? </p>
+`` `
+
+`` `js
+React.createElement ("p", {}, "¿Qué crees que estás haciendo, Dave?");
+`` `
+
+#### Con etiquetas anidadas
+
+Ambos son equivalentes
+
+`` `jsx
+<div>
+  <p> ¿Qué crees que estás haciendo, Dave? </p>
+</div>
+`` `
+
+`` `js
+React.createElement (
+  "div",
+  {},
+  React.createElement ("p", {}, "¿Qué crees que estás haciendo, Dave?")
+);
+`` `
+
+### JSX Gotchas!
+
+#### Use `className` en lugar de` class`
+
+`` `jsx
+return <p className = "my-class"> ¿Qué crees que estás haciendo, Dave? </p>;
+`` `
+
+#### Cuidado con ASI (Inserción automática de punto y coma)
+
+¡Si deja `return 'solo en una línea, se insertará automáticamente un punto y coma! Utilice `return (....)`.
+
+`` `jsx
+regreso (
+  <div>
+    <p className = "my-class"> ¿Qué crees que estás haciendo, Dave? </p>
+  </div>
+);
+`` `
